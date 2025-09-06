@@ -60,7 +60,7 @@ class ProductController extends Controller
         // 画像アップロード処理
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');
-            $product->image = 'storage/' . $path;
+            $product->image = $path;
         }
 
         $product->save();
@@ -85,7 +85,7 @@ class ProductController extends Controller
         // 画像アップロード
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');
-            $data['image'] = 'storage/' . $path;
+            $data['image'] = $path;
         }
 
         $product = Product::create($data);
