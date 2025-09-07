@@ -10,8 +10,8 @@
 
 ## 1. リポジトリのクローン
 
-git clone git@github.com:estra-inc/confirmation-test-contact-form.git
-cd confirmation-test-contact-form
+git clone git@github.com:ando625/test-mogitate.git
+cd test-mogitate
 
 ---
 
@@ -27,7 +27,7 @@ docker-compose up -d --build
 
 ### 3-1. PHP コンテナに入る
 
-docker-compose exec php bash
+docker compose exec php bash
 
 ### 3-2. Composer で依存関係をインストール
 
@@ -58,6 +58,11 @@ php artisan migrate
 - シーディング実行
 php artisan db:seed
 
+### 3-6. ストレージのリンク作成
+
+画像をブラウザで表示するために、storage ディレクトリをリンクします：
+
+php artisan storage:link
 ---
 
 ## 5. 注意事項
@@ -79,6 +84,6 @@ php artisan db:seed
 
 
 URL
-開発環境：http://localhost/
+開発環境：http://localhost/products
 
 phpMyAdmin:：http://localhost:8080/

@@ -38,6 +38,7 @@ database/*.db            # SQLite/DB ファイル（念のため）
 !/public/css/            # CSS は追跡
 !/public/js/             # JS は追跡
 !/public/products/       # 画像（必要なものだけ）を追跡
+!/public/images/
 
 # 公開ディレクトリと .gitignore は無視しない
 !public/
