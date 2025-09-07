@@ -1,48 +1,80 @@
 # test-mogi
 
 
-## 環境開発
+# 環境構築手順（Docker + Laravel）
 
-1. git clone git@github.com:Estra-Coachtech/laravel-docker-template.git クローン
+このリポジトリは、Docker と Laravel 環境で動作するアプリケーションです。  
+以下の手順でセットアップしてください。
 
-2. DockerDesktopアプリ立ち上げ
+---
 
-3. docker compose up -d --build
+## 1. リポジトリのクローン
 
-- platform: linux/x86_64  エラーが出たらymlのmysqlとphpmyadminに追加
-  mysql:
-    image: mysql:8.0.26
-    platform: linux/x86_64
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel_db
-      MYSQL_USER: laravel_user
-      MYSQL_PASSWORD: laravel_pass
+git clone git@github.com:estra-inc/confirmation-test-contact-form.git
+cd confirmation-test-contact-form
 
-4. docker compose exec php bash
+---
 
-5. composer install　　　　phpコンテナ内で実行
-   composer -v
-   cp .env.example .env　　初期状態では `.env.example` が用意されているので、以下のコマンドでコピーして `.env` を作成してください。
+## 2. Docker コンテナの起動
 
-   .env以下の環境変数を追加
-   DB_CONNECTION=mysql
-   DB_HOST=mysql
-   DB_PORT=3306
-   DB_DATABASE=laravel_db
-   DB_USERNAME=laravel_user
-   DB_PASSWORD=laravel_pass
+Docker Desktop を起動して、以下を実行します：
 
-5. アプリケーションキーの作成
-   php artisan key:generate
-
-6. マイグレーションの実行
-   php artisan migrate
-
-7. シーディング実行
-   php artisan db:seed
+docker-compose up -d --build
 
 
+
+## 3. Laravel 環境構築
+
+### 3-1. PHP コンテナに入る
+
+docker-compose exec php bash
+
+### 3-2. Composer で依存関係をインストール
+
+composer install
+
+### 3-3. .env ファイル作成
+
+cp .env.example .env
+
+.env に以下の環境変数を設定します：
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+
+### 3-4. アプリケーションキー生成
+
+php artisan key:generate
+
+### 3-5. データベース準備
+
+- マイグレーション実行
+php artisan migrate
+
+- シーディング実行
+php artisan db:seed
+
+---
+
+## 5. 注意事項
+
+- Docker の MySQL データは Git には含めないよう .gitignore に設定済みです。  
+- Mac M1/M2 でビルドエラーが出た場合は、platform: linux/x86_64 を追加してください。
+
+
+## 4. 利用技術（実行環境）
+
+- PHP: 8.3.0  
+- Laravel: 8.83.27  
+- MySQL: 8.0.26  
+
+---
+
+![ER図](public/images/testED.png)
 
 
 
