@@ -74,7 +74,7 @@ php artisan db:seed
 
 ---
 
-![ER図](public/images/er-diagram.png)
+![ER図](src/public/images/testED.png.png)
 
 
 
