@@ -11,6 +11,8 @@
 ## 1. リポジトリのクローン
 
 git clone git@github.com:ando625/test-mogitate.git
+
+
 cd test-mogitate
 
 ---
@@ -19,7 +21,7 @@ cd test-mogitate
 
 Docker Desktop を起動して、以下を実行します：
 
-docker-compose up -d --build
+docker compose up -d --build
 
 
 
@@ -63,6 +65,8 @@ php artisan db:seed
 画像をブラウザで表示するために、storage ディレクトリをリンクします：
 
 php artisan storage:link
+
+
 ---
 
 ## 5. 注意事項
