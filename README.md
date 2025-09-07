@@ -74,10 +74,12 @@ php artisan db:seed
 
 ---
 
-![ER図](public/images/testED.png)
+![ER図](src/public/images/testED.png)
 
 
 
 URL
 開発環境：http://localhost/
+
+
 phpMyAdmin:：http://localhost:8080/
