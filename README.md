@@ -10,9 +10,8 @@
 
 ## 1. リポジトリのクローン
 
-```git clone git@github.com:ando625/test-mogitate.git
-
-
+```bash
+git clone git@github.com:ando625/test-mogitate.git
 cd test-mogitate
 ```
 
