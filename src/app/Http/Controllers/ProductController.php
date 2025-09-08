@@ -93,7 +93,7 @@ class ProductController extends Controller
         // 多対多リレーション保存
         $product->seasons()->sync($request->seasons);
 
-        return redirect()->route('products.index')->with('success', '商品を登録しました');
+        return redirect()->route('products.index');
     }
 
     
@@ -103,6 +103,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($productId);
         $product->delete();
-        return redirect()->route('products.index')->with('success', '商品を削除しました');
+        return redirect()->route('products.index');
     }
 }
