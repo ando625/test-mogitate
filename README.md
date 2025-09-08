@@ -80,7 +80,7 @@ DB_PASSWORD=laravel_pass
 コメントアウトしてください。
 
 
-## 利用環境
+## 利用環境(実行環境)
 
 - PHP: 8.3.0  
 - Laravel: 8.83.27  
