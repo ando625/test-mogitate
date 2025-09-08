@@ -10,10 +10,12 @@
 
 ## 1. リポジトリのクローン
 
-git clone git@github.com:ando625/test-mogitate.git
+```git clone git@github.com:ando625/test-mogitate.git
 
 
 cd test-mogitate
+```
+
 
 ---
 
@@ -21,7 +23,7 @@ cd test-mogitate
 
 Docker Desktop を起動して、以下を実行します：
 
-docker compose up -d --build
+```docker compose up -d --build```
 
 
 
@@ -29,42 +31,43 @@ docker compose up -d --build
 
 ### 3-1. PHP コンテナに入る
 
-docker compose exec php bash
+```docker compose exec php bash```
 
 ### 3-2. Composer で依存関係をインストール
 
-composer install
+```composer install```
 
 ### 3-3. .env ファイル作成
 
-cp .env.example .env
+```cp .env.example .env```
 
 .env に以下の環境変数を設定します：
 
-DB_CONNECTION=mysql
+```DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
+```
 
 ### 3-4. アプリケーションキー生成
 
-php artisan key:generate
+```php artisan key:generate```
 
 ### 3-5. データベース準備
 
 - マイグレーション実行
-php artisan migrate
+```php artisan migrate```
 
 - シーディング実行
-php artisan db:seed
+```php artisan db:seed```
 
 ### 3-6. ストレージのリンク作成
 
 画像をブラウザで表示するために、storage ディレクトリをリンクします：
 
-php artisan storage:link
+```php artisan storage:link```
 
 
 ---
@@ -73,9 +76,12 @@ php artisan storage:link
 
 - Docker の MySQL データは Git には含めないよう .gitignore に設定済みです。  
 - Mac M1/M2 でビルドエラーが出た場合は、platform: linux/x86_64 を追加してください。
+- PHP 8.1 以降の環境では、`php.ini` 内の  
+```mbstring.internal_encoding``` 設定は廃止されているため  
+コメントアウトしてください。
 
 
-## 4. 利用技術（実行環境）
+## 利用環境
 
 - PHP: 8.3.0  
 - Laravel: 8.83.27  
