@@ -88,7 +88,7 @@ DB_PASSWORD=laravel_pass
 
 ---
 
-![ER図](src/docs/testED.png)
+![ER図](src/docs/ED.png)
 
 
 
